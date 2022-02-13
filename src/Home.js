@@ -14,14 +14,14 @@ export default class App extends Component {
       this.setState({ books: res });
     });
   }
-  
+
   render() {
     console.log(this.state.books, "all books");
     return (
       <div>
         <div className="books-list">
           <div className="books-list_title">
-            <h1>NReads</h1>
+            <h1>MyReads</h1>
           </div>
           <div className="books-list_content">
             <div>
@@ -32,11 +32,7 @@ export default class App extends Component {
                     {this.state.books
                       .filter((book) => book.shelf == "currentlyReading")
                       .map((book, index) => {
-                        console.log(book, index);
-                        console.log(book.authors);
-                        console.log(book.imageLinks.thumbnail);
-                        console.log(book.id);
-                        console.log(book.shelf);
+                        console.log(book.infoLink);
                         return (
                           <li>
                             <Card
@@ -46,6 +42,7 @@ export default class App extends Component {
                               img={book.imageLinks.thumbnail}
                               id={book.id}
                               shelf={book.shelf}
+                              info={book.infoLink}
                             />
                           </li>
                         );
@@ -60,11 +57,6 @@ export default class App extends Component {
                     {this.state.books
                       .filter((book) => book.shelf == "wantToRead")
                       .map((book, index) => {
-                        console.log(book, index);
-                        console.log(book.authors);
-                        console.log(book.imageLinks.thumbnail);
-                        console.log(book.id);
-                        console.log(book.shelf);
                         return (
                           <li>
                             <Card
@@ -74,6 +66,7 @@ export default class App extends Component {
                               img={book.imageLinks.thumbnail}
                               id={book.id}
                               shelf={book.shelf}
+                              info={book.infoLink}
                             />
                           </li>
                         );
@@ -88,11 +81,6 @@ export default class App extends Component {
                     {this.state.books
                       .filter((book) => book.shelf == "read")
                       .map((book, index) => {
-                        console.log(book, index);
-                        console.log(book.authors);
-                        console.log(book.imageLinks.thumbnail);
-                        console.log(book.id);
-                        console.log(book.shelf);
                         return (
                           <li>
                             <Card
@@ -102,6 +90,7 @@ export default class App extends Component {
                               img={book.imageLinks.thumbnail}
                               id={book.id}
                               shelf={book.shelf}
+                              info={book.infoLink}
                             />
                           </li>
                         );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { updateBook } from "./Api";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 export default class Card extends Component {
@@ -16,10 +17,11 @@ export default class Card extends Component {
       console.log(res);
     });
 
-    // getOneBook(this.props.id).then((res)=>{console.log(res,"get book by id");})
+   
   };
 
   render() {
+    console.log(this.props.info,"link of book");
     return (
       <div className="book">
         <div className="book-position">
@@ -40,6 +42,7 @@ export default class Card extends Component {
         </div>
         <div className="book-title">{this.props.title}</div>
         <div className="book-author">{this.props.authors.join(" , ")}</div>
+        <Link className="book-info" to={this.props.info}>more info</Link>
       </div>
     );
   }
