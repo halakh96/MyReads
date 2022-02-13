@@ -14,7 +14,12 @@ export default class App extends Component {
       this.setState({ books: res });
     });
   }
-
+  // 
+ updateBooks = () => {
+  getAllBooks().then((res) => {
+    this.setState({ books: res });
+  });
+ }
   render() {
     console.log(this.state.books, "all books");
     return (
@@ -43,6 +48,7 @@ export default class App extends Component {
                               id={book.id}
                               shelf={book.shelf}
                               info={book.infoLink}
+                              updateBooks={this.updateBooks}
                             />
                           </li>
                         );
@@ -67,6 +73,7 @@ export default class App extends Component {
                               id={book.id}
                               shelf={book.shelf}
                               info={book.infoLink}
+                              updateBooks={this.updateBooks}
                             />
                           </li>
                         );
@@ -91,6 +98,7 @@ export default class App extends Component {
                               id={book.id}
                               shelf={book.shelf}
                               info={book.infoLink}
+                              updateBooks={this.updateBooks}
                             />
                           </li>
                         );

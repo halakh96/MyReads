@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { updateBook } from "./Api";
-import { Link } from "react-router-dom";
 import "./App.css";
 
 export default class Card extends Component {
@@ -14,14 +13,11 @@ export default class Card extends Component {
     console.log(e.target.value, "'selected option'");
     console.log(this.props.id, "'book id'");
     updateBook(this.props.id, e.target.value).then((res) => {
-      console.log(res);
+      this.props.updateBooks();
     });
-
-   
   };
 
   render() {
-    console.log(this.props.info,"link of book");
     return (
       <div className="book">
         <div className="book-position">
@@ -41,8 +37,8 @@ export default class Card extends Component {
           </div>
         </div>
         <div className="book-title">{this.props.title}</div>
-        <div className="book-author">{this.props.authors.join(" , ")}</div>
-        <Link className="book-info" to={this.props.info}>more info</Link>
+        <div className="book-author">{this.props.authors?.join(" , ")}</div>
+        <a className="book-info" href={this.props.info}>more info</a>
       </div>
     );
   }

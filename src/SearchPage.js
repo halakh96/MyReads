@@ -30,7 +30,6 @@ export default class SearchPage extends Component {
             <Link to="/">
               <button
                 className="close-btn-bar"
-                // onClick={() => this.setState({ showSearchPage: false })}
               >
                 Close
               </button>
