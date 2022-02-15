@@ -188,6 +188,10 @@ body,
   padding: 80px 10px 20px;
 }
 
+.notFound {
+  color: #177069;
+}
+
 img {
   width: 130px;
   height: 200px;

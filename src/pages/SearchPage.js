@@ -1,21 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { searchBook } from "./Api";
-import Card from "./Card";
-import "./App.css";
+import { searchBook } from "../Api";
+import Card from "../components/Card";
+import "../App.css";
 
 export default class SearchPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchBookArr: [], inputValue: "" };
+    this.state = { searchBookArr: [],
+       inputValue: "",
+       notFoundBook: false };
   }
 
   submitHandler = (e) => {
     e.preventDefault();
     searchBook(this.state.inputValue).then((res) => {
+      console.log(res,"res");
+      this.setState({notFoundBook: false}) 
+      if (res.error == "empty query"){
+        this.setState({notFoundBook: true})
+        }
+        else {
       this.setState({ searchBookArr: res });
       console.log(this.state.searchBookArr, "arr");
+        }
     });
+  
   };
 
   searchHandler = (e) => {
@@ -44,9 +54,8 @@ export default class SearchPage extends Component {
             </form>
           </div>
           <div className="search-results">
-            <div className="shelf-books">
               <ol className="books-box">
-                {this.state.searchBookArr.map((book, index) => {
+              {this.state.notFoundBook ? (<h1 className="notFound">Sorry .. No Books Available</h1>):(this.state.searchBookArr.map((book, index) => {
                   return (
                     <li>
                       <Card
@@ -60,9 +69,8 @@ export default class SearchPage extends Component {
                       />
                     </li>
                   );
-                })}
+                }))}  
               </ol>
-            </div>
           </div>
         </div>
       </div>

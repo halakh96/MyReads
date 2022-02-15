@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { updateBook } from "./Api";
-import "./App.css";
+import { updateBook } from "../Api";
+import "../App.css";
 
 export default class Card extends Component {
   constructor(props) {

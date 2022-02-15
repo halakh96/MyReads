@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getAllBooks } from "./Api";
-import Card from "./Card";
-import "./App.css";
+import { getAllBooks } from "../Api";
+import Card from "../components/Card";
+import "../App.css";
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class App extends Component {
       this.setState({ books: res });
     });
   }
-  // 
+  //  pass books array (or any var) to Card (or any component).. then use it in Card as props
  updateBooks = () => {
   getAllBooks().then((res) => {
     this.setState({ books: res });

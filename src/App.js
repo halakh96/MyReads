@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import SearchPage from "./SearchPage";
+import Home from "./pages/Home";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
