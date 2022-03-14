@@ -1,8 +1,8 @@
-# <img src="public/favicon.ico" width="50px"> NReads
+# MyReads
 
 
 ## Introduction
-NReads is a simple book cataloging app that allows you to place books on one of three shelves or categories. Currently Reading, Want to Read, or the Read shelf. It also allows you to search for books based on their title and author.
+A simple book cataloging app that allows you to place books on one of three shelves or categories. Currently Reading, Want to Read, or the Read shelf. It also allows you to search for books based on their title and author.
 
 
 ### Technologies Used:
