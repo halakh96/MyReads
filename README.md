@@ -4,6 +4,7 @@
 ## Introduction
 A simple book cataloging app that allows you to place books on one of three shelves or categories. Currently Reading, Want to Read, or the Read shelf. It also allows you to search for books based on their title and author.
 
+#### project link : [https://halakh96-choose-one.netlify.app](https://halakh96-myreads.netlify.app/)
 
 ### Technologies Used:
 * HTML
